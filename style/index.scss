@@ -1,0 +1,178 @@
+$base-color: #F2F3F8;
+@mixin shadow {
+  box-shadow: 0 0 13rem 0 rgba(82, 63, 105, 5%);
+}
+@mixin fraction($percent) {
+  flex: 0 0 $percent;
+  max-width: $percent;
+}
+
+* {
+  box-sizing: border-box;
+  line-height: normal;
+}
+
+html {
+  font-size: calc(100vw / 1512);
+}
+
+.result {
+  font-family: PingFang SC;
+  background-color: $base-color;
+  -webkit-font-smoothing: antialiased;
+  width: 1512rem;
+  height: 834rem;
+  overflow: hidden;
+
+  .nav-bar {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 65rem;
+    background-color: #763890;
+    border-bottom: 1rem solid #eff0f6;
+    box-sizing: border-box;
+
+    .logo {
+      margin-left: 39.3rem;
+      height: 65rem;
+      width: auto;
+    }
+
+    .nav {
+      font-size: 16.9rem;
+      font-weight: 500;
+      color: $base-color;
+      margin-left: 35.1rem;
+      &:first-of-type {
+        margin-left: 56.8rem;
+      }
+    }
+
+    .lang-icon {
+      width: 21.5rem;
+      height: 21.5rem;
+      margin-left: auto;
+      margin-right: 83rem;
+    }
+  }
+
+  .content {
+    width: 100%;
+    padding: 0 55rem;
+
+    .title {
+      font-size: 17rem;
+      font-weight: 700;
+      color: #4A2C6C;
+      line-height: 60rem;
+      height: 60rem;
+    }
+
+    .card {
+      border-radius: 10rem;
+      background-color: white;
+      @include shadow;
+      .tabs {
+        display: flex;
+        .tab {
+          width: 50%;
+          height: 48rem;
+          font-size: 15rem;
+          font-weight: 700;
+          padding: 12rem 0;
+          text-align: center;
+          color: #595d6e;
+          border-bottom: 3rem solid $base-color;
+          &.active {
+            color: #5d78ff;
+            border-bottom: 3rem solid #5d78ff;
+          }
+        }
+      }
+      &-content {
+        padding: 15rem 25rem;
+        font-size: 15.6rem;
+        font-weight: 600;
+        color: #595d6e;
+        .info {
+          .valid-day {
+            margin-left: 20rem;
+          }
+          .valid-start-date {
+            margin-right: 5rem;
+          }
+          .valid-end-date {
+            margin-left: 5rem;
+          }
+          .pass-tag {
+            color: white;
+            background-color: #0abb87;
+            font-size: 16.9rem;
+            line-height: 16.9rem;
+            height: 19.5rem;
+            font-weight: 600;
+            padding: 0 9.75rem;
+            border-radius: 3rem;
+          }
+        }
+        .sub-card {
+          @include shadow;
+          border: 1rem solid #eff0f6;
+          border-radius: 10rem;
+          margin: 15rem 0 40rem;
+          &-head {
+            height: 60rem;
+            border-bottom: 1rem solid #eff0f6;
+            padding: 0 25rem;
+            font-size: 15.6rem;
+            font-weight: 500;
+            line-height: 60rem;
+            color: #48465b;
+          }
+          &-content {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-column-gap: 20rem;
+            padding: 25rem;
+            .item {
+              display: flex;
+              align-items: center;
+              box-sizing: content-box;
+              padding: 10rem 0;
+              .label {
+                flex: 0 0 25%;
+                text-align: right;
+                padding: 9.45rem 10rem;
+                font-size: 13rem;
+                line-height: 19.5rem;
+                font-weight: 400;
+                color: #6C6C6C;
+              }
+              .value {
+                flex: 0 0 75%;
+                padding: 0 10rem;
+                .input {
+                  width: 100%;
+                  border: 1rem solid #e2e5ec;
+                  border-radius: 6rem;
+                  color: #495057;
+                  font-size: 13rem;
+                  line-height: 19.5rem;
+                  font-weight: 400;
+                  padding: 8.45rem 13rem;
+                  background-color: #f7f8fa;
+                }
+                .text {
+                  font-size: 13rem;
+                  line-height: 19.5rem;
+                  font-weight: 400;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <title>My First Parcel App</title>
+  <link rel="stylesheet" href="./style/reset.scss">
+  <link rel="stylesheet" href="./style/index.scss">
+  <script type="module" src="./src/index.ts"></script>
+</head>
+
+<body>
+  <div class="result">
+    <div class="nav-bar">
+      <img class="logo" src="./assets/logo.png" />
+      <span class="nav">我的申请</span>
+      <span class="nav">我的任务</span>
+      <span class="nav">个人中心</span>
+      <span class="nav">回到旧版</span>
+      <svg class="lang-icon" viewBox="0 0 100 100">
+        <circle cx="50" cy="50" r="43" stroke="white" stroke-width="7" fill="none" />
+        <text x="23" y="63" font-size="32pt" fill="white">EN</text>
+      </svg>
+    </div>
+    <div class="content">
+      <h1 class="title">出入校申请</h1>
+      <div class="card">
+        <ul class="tabs">
+          <li class="tab active">申请表单</li>
+          <li class="tab">疫苗信息</li>
+        </ul>
+        <div class="card-content">
+          <div class="info">
+            <div>
+              <span>申请类型：离校不离深</span>
+              <span class="valid-day">申请有效天数：1</span>
+            </div>
+            <div>
+              有效期（从）：<span class="valid-start-date">2022-11-26</span> 到 <span class="valid-end-date">2022-11-26</span>
+            </div>
+            <div>
+              当前申请单状态： <span class="pass-tag">审批通过</span>
+            </div>
+            <div>
+              类别：<span>临时外出</span>
+            </div>
+          </div>
+          <div class="sub-card">
+            <h2 class="sub-card-head">基本信息</h2>
+            <ul class="sub-card-content">
+              <li class="item">
+                <label class="label">学号</label>
+                <div class="value">
+                  <input class="input" readonly="readonly" value="000000000" />
+                </div>
+              </li>
+              <li class="item">
+                <label class="label">姓名</label>
+                <div class="value">
+                  <input class="input" readonly="readonly" value="杜子德" />
+                </div>
+              </li>
+              <li class="item">
+                <label class="label">宿舍号</label>
+                <div class="value">
+                  <input class="input" readonly="readonly" value="Z999" />
+                </div>
+              </li>
+              <li class="item">
+                <label class="label">学院</label>
+                <div class="value">
+                  <input class="input" readonly="readonly" value="理工学院" />
+                </div>
+              </li>
+              <li class="item">
+                <label class="label">书院</label>
+                <div class="value">
+                  <input class="input" readonly="readonly" value="逸夫书院" />
+                </div>
+              </li>
+              <li class="item">
+                <label class="label">联系电话</label>
+                <div class="value">
+                  <input class="input" readonly="readonly" value="11111111111" />
+                </div>
+              </li>
+              <li class="item">
+                <label class="label">计划离校日期</label>
+                <div class="value">
+                  <input class="input" readonly="readonly" value="2022-11-26" />
+                </div>
+              </li>
+              <li class="item">
+                <label class="label">计划返校日期</label>
+                <div class="value">
+                  <input class="input" readonly="readonly" value="2022-11-26" />
+                </div>
+              </li>
+              <li class="item">
+                <label class="label">类别</label>
+                <div class="value">
+                  <input class="input" readonly="readonly" value="临时外出" />
+                </div>
+              </li>
+              <li class="item">
+                <label class="label">审批部门</label>
+                <div class="value">
+                  <span class="text"> SHAW </span>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="sub-card">
+            <h2 class="sub-card-head">目的地 1</h2>
+            <ul class="sub-card-content">
+              <li class="item">
+                <label class="label">省/直辖市</label>
+                <div class="value">
+                  <input class="input" readonly="readonly" value="广东" />
+                </div>
+              </li>
+              <li class="item">
+                <label class="label">区/市</label>
+                <div class="value">
+                  <input class="input" readonly="readonly" value="深圳" />
+                </div>
+              </li>
+              <li class="item">
+                <label class="label">区/县</label>
+                <div class="value">
+                  <input class="input" readonly="readonly" value="龙岗区" />
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
