@@ -1,0 +1,19 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  padding: 40rem;
+  font-size: 60rem;
+  & > * {
+    margin-top: 40rem;
+  }
+  label {
+    display: flex;
+    span {
+      flex: 1;
+    }
+    input {
+      flex: 3;
+    }
+  }
+}

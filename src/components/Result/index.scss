@@ -1,23 +1,16 @@
-$base-color: #F2F3F8;
-@mixin shadow {
-  box-shadow: 0 0 13rem 0 rgba(82, 63, 105, 5%);
-}
-@mixin fraction($percent) {
-  flex: 0 0 $percent;
-  max-width: $percent;
-}
-
-* {
-  box-sizing: border-box;
-  line-height: normal;
-}
-
-html {
-  font-size: calc(100vw / 1512);
-}
-
 .result {
-  font-family: PingFang SC;
+  position: absolute;
+  z-index: -1;
+  $base-color: #F2F3F8;
+  @mixin shadow {
+    box-shadow: 0 0 13rem 0 rgba(82, 63, 105, 5%);
+  }
+  @mixin fraction($percent) {
+    flex: 0 0 $percent;
+    max-width: $percent;
+  }
+
+  font-family: "Helvetica Neue", Helvetica, "PingFang SC", Tahoma, Arial, sans-serif;;
   background-color: $base-color;
   -webkit-font-smoothing: antialiased;
   width: 1512rem;

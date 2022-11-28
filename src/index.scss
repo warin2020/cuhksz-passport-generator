@@ -1,0 +1,20 @@
+* {
+  box-sizing: border-box;
+  line-height: normal;
+}
+
+// 自适应
+html {
+  font-size: calc(100vw / 1512);
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 1512rem;
+  background-color: white;
+  .title {
+    font-size: 80rem;
+  }
+}
