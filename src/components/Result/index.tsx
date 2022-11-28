@@ -3,6 +3,16 @@ import * as htmlToImage from 'html-to-image';
 import logo from '../../assets/logo.png';
 import './index.scss';
 
+const date = new Date().toISOString().split('T')[0];
+
+const collegeCNToEN = {
+  '逸夫书院': 'SHAW',
+  '学勤书院': 'DILIGENTIA',
+  '思廷书院': 'MUSE',
+  '祥波书院': 'HARMONIA',
+  '道扬书院': 'LING'
+}
+
 export interface ResultData {
   stuNo: string;
   stuName: string;
@@ -33,22 +43,21 @@ export default forwardRef<ResultRef, ResultProps>(function Result(
   },
   selfRef
 ) {
-  const date = new Date().toISOString().split('T')[0];
-
   const ref = useRef<HTMLDivElement>(null);
 
-  const downloadResult = () => {
+  const downloadResult = async () => {
     if (ref.current !== null) {
-      htmlToImage.toBlob(ref.current)
-        .then((blob) => {
-          if (blob !== null) {
-            const url = URL.createObjectURL(blob)
-            const a = document.createElement("a")
-            a.download = `出入校申请-${stuName}.png`
-            a.href = url
-            a.click()
-          }
-        })
+      // sb html-to-image在safari上有bug图片显示不出来，调用两次即可解决
+      // https://github.com/tsayen/dom-to-image/issues/343#issuecomment-1259942481
+      await htmlToImage.toBlob(ref.current);
+      const blob = await htmlToImage.toBlob(ref.current);
+      if (blob !== null) {
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement("a");
+        a.download = `出入校申请-${stuName}.png`;
+        a.href = url;
+        a.click();
+      }
     }
   };
 
@@ -152,7 +161,7 @@ export default forwardRef<ResultRef, ResultProps>(function Result(
                 <li className="item">
                   <label className="label">审批部门</label>
                   <div className="value">
-                    <span className="text"> SHAW </span>
+                    <span className="text"> {collegeCNToEN[college]} </span>
                   </div>
                 </li>
               </ul>

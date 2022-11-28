@@ -1,7 +1,7 @@
 .form {
   display: flex;
   flex-direction: column;
-  width: 80%;
+  width: 90%;
   padding: 40rem;
   font-size: 60rem;
   & > * {
@@ -12,8 +12,13 @@
     span {
       flex: 1;
     }
-    input {
+    input, select {
       flex: 3;
+      -webkit-appearance: none;
     }
+  }
+  .submit {
+    background-color: white;
+    border: 1rem solid black;
   }
 }

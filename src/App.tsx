@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import Result, { ResultRef, ResultData } from './components/Result';
 import Form from './components/Form';
 import './index.scss';
@@ -14,17 +14,19 @@ export default function App() {
     phone: "11111111111"
   });
 
-  const resultRef = useRef<ResultRef>(null);
+  useEffect(() => {
+    const localData = window.localStorage.getItem('localData');
+    if (localData !== null) {
+      setData(JSON.parse(localData) as ResultData);
+    }
+  }, []);
 
-  const handleSubmit: React.FormEventHandler<HTMLFormElement> = (e) => {
-    resultRef.current?.downloadResult();
-    e.preventDefault();
-  };
+  const resultRef = useRef<ResultRef>(null);
 
   return (
     <div className="container">
       <h1 className="title">出入校申请生成器</h1>
-      <Form data={data} setData={setData} handleSubmit={handleSubmit} />
+      <Form data={data} setData={setData} downloadResult={() => resultRef.current?.downloadResult?.()} />
       <Result ref={resultRef} data={data} />
     </div>
   );
